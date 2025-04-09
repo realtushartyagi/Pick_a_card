@@ -1,0 +1,140 @@
+body {
+	background: #070707;
+	margin: 0;
+	overflow: hidden;
+	font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+	display: flex;
+	height: 100vh;
+}
+
+.deck {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	position: absolute;
+	perspective: 1000px;
+	transform-origin: bottom center;
+	border-radius: 10px;
+	transition: transform 0.08s ease-in-out;
+}
+
+.card:hover {
+	box-shadow: 0 0 10px rgba(255,255,0,.8);
+	transform: scale(2);
+}
+
+.card-inner {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 0.6s;
+}
+
+.card.flipped .card-inner {
+	transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	backface-visibility: hidden;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+.card-front {
+	background-color: white;
+}
+
+.card-back {
+	background: repeating-linear-gradient(
+		45deg,
+		#555,
+		#201f1f 10px,
+		#201f1f 10px,
+		#333 20px
+	);
+	transform: rotateY(180deg);
+}
+
+.corner {
+	font-size: 18px;
+	line-height: 1;
+}
+
+.top-left {
+	align-self: flex-start;
+}
+
+.bottom-right {
+	align-self: flex-end;
+	transform: rotate(180deg);
+}
+
+.center-suit {
+	font-size: 36px;
+	text-align: center;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.panel {
+	width: 200px;
+	background: #1a1a1a;
+	color: #fff;
+	padding: 20px;
+	box-sizing: border-box;
+	border-left: 2px solid #444;
+}
+
+.panel h2 {
+	margin-top: 0;
+}
+
+.panel label {
+	display: block;
+	margin: 10px 0 5px;
+}
+
+.panel input[type="range"],
+.panel select,
+.panel button {
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 6px;
+	font-size: 16px;
+}
+
+@media (max-width: 520px) {
+	.panel,
+	.panel select,
+	.panel button {
+		font-size: 0.7rem;
+	}
+	.panel input[type="range"] {
+		width: 80px;
+	}
+	.panel {
+		width: 120px;
+		padding: 5px;
+	}
+}

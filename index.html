@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="deck" id="deck"></div>
+    
+        <div class="panel">
+            <h2>Controls</h2>
+            <p><strong>Instruction:</strong><br />Hold to drag. Double click to flip</p>
+    
+            <label for="sizeSlider">Card Size</label>
+            <input type="range" id="sizeSlider" min="100" max="200" value="100" />
+    
+            <label for="suitSelect">Card Suit</label>
+            <select id="suitSelect">
+                <option value="♠">Spade</option>
+                <option value="♥" selected>Heart</option>
+                <option value="♣">Club</option>
+                <option value="♦">Diamond</option>
+            </select>
+    
+            <button id="randomizeBtn">Randomize</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
